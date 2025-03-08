@@ -2,11 +2,10 @@
 $host = '127.0.0.1';
 $dbname = 'contatos';
 $username = 'siscontato';
-$password = 'contatos';
+$password = 'contato';
 
 try {
-	$conn = mysqli_connect($host, $username, $password);
-	echo ("Conectado Com sucesso ! ");
+	$conn = mysqli_connect($host, $username, $password, $dbname, 3306);
 } catch (PDOException $e) {
 	die("Erro na conexão: " . $e->getMessage());
 }
@@ -14,10 +13,12 @@ try {
 function search_contact($conn): array
 {
 	$query = 'SELECT * FROM contatos';
-	$stmt = conn->prepare($query);
+	$result = mysqli_query($conn, $query);
+	$contacts = [];
 
-	while ($contato = mysqli_fetch_assoc($stmt)) {
-		$contacts[] = $contato;
+	while ($contact = mysqli_fetch_assoc($result)) {
+		$contacts[] = $contact;
 	}
+
 	return $contacts;
 }
