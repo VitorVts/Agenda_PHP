@@ -318,7 +318,8 @@
 							<div class="contact-info">
 								<div class="contact-name">
 									<?php echo $contact['nome']; ?>
-									<i class="fas fa-star favorite-star active"></i>
+									<i class="fas fa-star favorite-star <?php echo $contact['favorito'] ? 'active' : 'disabled'; ?>"></i>
+
 								</div>
 								<div class="contact-phone"><?php echo $contact['telefone']; ?></div>
 							</div>
@@ -360,11 +361,14 @@
 
 		// Função para alternar o favorito
 		function toggleFavorite() {
-			const star = document.getElementById('favoritoStar');
-			const input = document.getElementById('favorito');
-			star.classList.toggle('active');
-			input.value = star.classList.contains('active') ? '1' : '0';
-		}
+    const star = document.getElementById('favoritoStar');  
+    const input = document.getElementById('favorito');     
+
+    star.classList.toggle('active');
+    
+    input.value = star.classList.contains('active') ? '1' : '0';
+}
+
 	</script>
 </body>
 
