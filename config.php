@@ -22,3 +22,9 @@ function search_contact($conn): array
 
 	return $contacts;
 }
+
+function delete_contact($conn,$id): void 
+{
+	$query = "DELETE FROM contatos WHERE id = {$id}";
+	mysqli_query($conn, $query);
+}

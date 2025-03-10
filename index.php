@@ -326,9 +326,9 @@
 								<button class="btn btn-outline-primary btn-sm">
 									<i class="fas fa-edit"></i>
 								</button>
-								<button class="btn btn-outline-danger btn-sm">
+								<a class="btn btn-outline-danger btn-sm" href="delete.php?id=<?php echo $contact['id']; ?>">
 									<i class="fas fa-trash"></i>
-								</button>
+								</a>
 							</div>
 						</div>
 						<div class="contact-description">
