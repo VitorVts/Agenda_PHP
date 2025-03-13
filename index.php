@@ -361,7 +361,7 @@
 
 		// Função para alternar o favorito
 		function toggleFavorite() {
-    const star = document.getElementById('favoritoStar');  
+    const star = document.getElementById('favoritoStar'); 
     const input = document.getElementById('favorito');     
 
     star.classList.toggle('active');
